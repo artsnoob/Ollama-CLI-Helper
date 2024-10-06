@@ -26,19 +26,37 @@ pip install requests rich
 
 3. Ensure Ollama is running locally on the default port (11434).
 
-## Usage
+## Add script to the ZSH config for easy access.
 
-Run the script from the command line, providing the MacOS terminal command you want to learn about:
 
-```bash
-python3 main.py <your query>
-```
-
-For example:
+Open your zsh config file:
 
 ```bash
-python3 main.py ls -la
+nano ~/.zshrc
 ```
+
+Add the following line to create an alias (adjust the path to where your script is located):
+
+```bash
+alias h='python3 /path/to/your/script/main.py'
+```
+
+Save the file and exit nano (Ctrl+X, then Y, then Enter).
+Reload your zsh configuration:
+
+```bash
+source ~/.zshrc
+```
+
+Now you can use the alias to query the app. For example:
+
+```bash
+h ls -la
+```
+
+This will run your script and provide an explanation for the ls -la command.
+You can replace ls -la with any other command you want to learn about. The app will query Ollama and return the explanation in a formatted output.
+Would you like me to clarify or expand on any part of this explanation?
 
 ## How it works
 
